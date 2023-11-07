@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async await</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+     <style>
+
+        #wiki{
+            background-color: #f0ebf8
+        }
+/* 
+     api card's css
+
+        .card {
+            margin: 5px;
+            background-color: lavender;
+        }
+        .row{
+            display: flex !important;
+            justify-content: center !important;
+        } */
+     </style>
+
+
+</head>
+<body>
+    <div id="wiki">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit maiores esse,
+         totam ab, praesentium, repudiandae ipsam recusandae suscipit harum nisi animi quis amet id aut 
+         earum nihil tempore quia sapiente. Odio odit soluta neque non!</div>
+         <button>Click me to hide paragraphs</button>
+    
+        <!-- fetch api body
+
+        <div class="row" id="card_row">
+  
+    </div> -->
+
+   
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
+    
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<script>
+
+$(document).ready(function(){
+  $("button").click(function(){
+    $("p").hide();
+  });
+});
+
+
+
+//  local storage example
+
+
+    // let n = localStorage.getItem("note")
+    // alert(n)
+
+    // let a = prompt("enter your note")
+    // if(a){
+    // localStorage.setItem("note", a)
+    // }
+
+    // let c = confirm("do you want to delete note")
+    // if(c){
+    //     localStorage.removeItem("note")
+    //     alert("note is deleted")
+    // }
+   
+ 
+
+   
+
+
+    // fetch api example
+
+//     let card_row = document.getElementById("card_row")
+//     let URL = "https://api.tvmaze.com/schedule?country=US&date=2014-12-01"
+
+//     let p = fetch(URL)
+//     p.then((value)=>{
+//         return value.json()
+//     }) .then((response)=>{
+//         console.log(response);
+
+//          ihtml="";
+
+//         for( item in response){
+            
+//             ihtml += `
+//             <div class="card  " style="width: 18rem;">
+//     <div class="card-body">
+//       <p class="card-text">Id: ${response[item].id}</p>
+//       <a href="${response[item].url}" >visit here</a>
+//       <h6 class="card-title mt-2">Name: ${response[item].name}</h6>
+//       <p class="card-text">Season: ${response[item].season}</p>
+//       <p class="card-text">AirDate: ${response[item].airdate}</p>
+//       <p class="card-text">AirTime: ${response[item].airtime}</p>
+//       <p class="card-text">RunTime: ${response[item].runtime}</p>
+//       <a href="#" class="btn btn-primary">Add</a>
+//     </div>
+//   </div>  
+//             `
+//         }
+        
+//         card_row.innerHTML = ihtml;
+//     })
+  
+    
+
+
+
+
+
+
+
+
+
+    
+
+//  post method
+
+
+    // let create = async()=>{
+    //         let option = {
+    //             method: 'POST',
+    // body: JSON.stringify({
+    //     title: 'foo',
+    //     body: 'bar',
+    //     userId: 1,
+    // }),
+    // headers: {
+    //     'Content-type': 'application/json; charset=UTF-8',
+    // },
+    //         }
+    //        let p = await fetch ('https://jsonplaceholder.typicode.com/posts', option )
+    //        let response = await p.json()
+    //         return response
+    //     }
+
+    //     let get = async (id)=>{
+    //        let response= await fetch('https://jsonplaceholder.typicode.com/posts/' + id)
+    //             let r  = response.json()
+    //               return r;
+    //     }
+
+    //     let main= async()=>{
+    //         let todo = await create()
+    //         console. log(todo);
+    //         console.log(await get(50));
+    //     }
+
+    //     main();
+
+    
+     //      fetch api get method
+
+
+    // let p = fetch("https://datausa.io/api/data?drilldowns=Nation&measures=Population")
+    // p.then ((value) => {
+    //     console.log(value.status);
+    //     console.log(value.ok);
+    //     console.log(value.headers);
+    //     return value.json()
+    // })
+    // .then((value1) => {
+    //     console.log(value1);
+    // })
+
+
+    //                    async await function
+
+//    const student = {
+//     name : ["ali" , "ahmad"],
+//     class : ["4", "5"],
+//     id : ["1", "2"]
+//    }
+//    let school_open = true;
+
+//    function time(ms) {
+//     return new Promise((resolve,reject)=>{
+//         if(school_open){
+//             setTimeout(resolve,ms)
+//         }
+//         else{
+//             reject(console.log("request rejected"));
+//     }
+//     });
+//    }
+
+//    async function school() {
+//       try{
+//         await time(1000)
+//         console.log(`student name is ${student.name[1]}`)
+        
+//         await time(1000)
+//         console.log(`he read in class ${student.class[0]}`)
+
+//         //  await newFunc();
+        
+//         await time(1000)
+//         console.log(`his id is ${student.id[1]}`)
+
+//       }catch(error){
+//         console.log("this name student, nothing here", error);
+//     } finally{
+//         console.log("filfull your request");
+//     }
+//    } 
+//    school();
+
+//    let newFunc = () => {
+//      return new Promise((resolve,reject)=>{
+//         setTimeout(() => {
+//         console.log("hello i'm new function")
+//         }, 3000);
+//      })
+//    }
+  
+
+</script>
+</html>
